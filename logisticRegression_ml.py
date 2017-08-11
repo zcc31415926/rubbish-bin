@@ -14,3 +14,5 @@ for model,ax in zip([LinearSVC(),LogisticRegression()],axes):
     ax.set_xlabel("feature 0")
     ax.set_ylabel("feature 1")
 axes[0].legend()
+
+mglearn.plots.plot_linear_svc_regularization()

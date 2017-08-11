@@ -14,7 +14,7 @@ imshow(image)
 # a list of points in the image
 x=[100,100,400,400]
 y=[200,500,200,500]
-# display the points in redstar format
+# display the points in red & star format
 plot(x,y,'r*')
 # draw a line between (x[0],y[0]) and (x[1],y[1])
 plot(x[:2],y[:2])
