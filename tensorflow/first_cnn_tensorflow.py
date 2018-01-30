@@ -78,7 +78,7 @@ sess.run(tf.global_variables_initializer())
 #     if i%100 == 0:
 #         train_accuracy = accuracy.eval(feed_dict = {x: batch[0],
 #                                                     y_: batch[1],
-#                                                     keep_prob = 1.0})
+#                                                     keep_prob: 1.0})
 #         print("step %d, training accuracy %g"%(i, train_accuracy))
 #         # save the present state and parameters as a checkpoint
 #         # stored in "model.ckpt"
