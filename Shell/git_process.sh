@@ -7,5 +7,5 @@ git commit -m "$1"
 if [ -z "$2" ]; then
     git push origin master
 else
-    git push orgin $2
+    git push origin $2
 fi
