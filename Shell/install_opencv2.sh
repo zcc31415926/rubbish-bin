@@ -1,3 +1,5 @@
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install build-essential
 sudo apt-get install cmake
 sudo apt-get install libgtk2.0-dev
