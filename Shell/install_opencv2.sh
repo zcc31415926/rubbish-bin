@@ -9,7 +9,7 @@ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
 sudo apt-get install libjpeg-dev libpng-dev libtiff-dev libjasper-dev
 sudo apt-get install libv4l-dev v4l2ucp v4l-utils
 
-wget -c https://github.com/opencv/opencv/archive/2.4.13.6.zip
+wget -c https://github.com/opencv/opencv/archive/2.4.13.6.zip -O opencv-2.4.13.6.zip
 unzip opencv-2.4.13.6.zip
 
 cd opencv-2.4.13.6
