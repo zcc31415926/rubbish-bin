@@ -1,8 +1,41 @@
-\documentclass[nofonts]{ctexart}
+\documentclass{article}
 
+    % the title part of the article.
+    % use \maketitle after \begin{document} to make the title.
+    \title{test}
+    \author{charliezhao}
+    \date{June 2018}
+
+    % import packages listed in package.sty.
     \usepackage{package}
-    \setCJKmainfont{SimSun}
 
     \begin{document}
-        宋体
+
+        % make the title with the details above.
+        \maketitle
+
+        % start a new page.
+        \newpage
+
+        % create contents for the article.
+        \tableofcontents
+
+        \newpage
+
+        % split the whole article into small parts
+        % which are stored separately in different tex files.
+        % use \input to import the tex file into the article.
+        \input{abstract}
+        \input{intro}
+        \input{multicolumn}
+        \input{figure}
+        \input{concl}
+
+        % set style for the references.
+        % plain style prints the names without abbreviations.
+        % abbrv style prints the opposite.
+        % the list is stored in reference.bib.
+        \bibliographystyle{plain}
+        \bibliography{reference}
+
     \end{document}
