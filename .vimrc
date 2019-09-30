@@ -2,12 +2,20 @@ syntax on
 
 let mapleader=","
 
+nnoremap W $
+nnoremap $ Q
+nnoremap Q q
+nnoremap q viwc
+nnoremap B 0
+nnoremap 0 B
+
 filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
 
 " set mouse=a
+set nocompatible
 set hidden
 set nocp
 set nu
@@ -27,13 +35,16 @@ set autoindent
 set smartindent
 set expandtab
 set wildmenu
+set nrformats=
 set history=100
 set tabstop=4
+set showtabline=2
 set softtabstop=4
 set shiftwidth=4
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set path+=/home/charlie/**
 set signcolumn=yes
 set selection=exclusive
 set selectmode=mouse,key
@@ -74,6 +85,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 " bracket autocomplete and autodelete
 Plug 'jiangmiao/auto-pairs'
+" tag explorer and viewer
+Plug 'liuchengxu/vista.vim'
 
 call plug#end()
 
@@ -83,7 +96,7 @@ call plug#end()
 
 " plugin 'YouCompleteMe' session begins:
 
-" nmap <M-g> :YcmCompleter GoToDefinitionElseDeclaration <C-R>=expand("<cword>")<CR><CR> 
+nnoremap <c-[> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 set completeopt=longest,menu
 set completeopt-=preview
