@@ -6,16 +6,17 @@ nnoremap W $
 nnoremap $ Q
 nnoremap Q q
 nnoremap q viwc
-nnoremap B 0
-nnoremap 0 B
+nnoremap B ^
+nnoremap ^ B
+noremap \ ,
 
 filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-" set mouse=a
 set nocompatible
+set spell
 set hidden
 set nocp
 set nu
@@ -29,6 +30,8 @@ set showcmd
 set ruler
 set showmatch
 set ignorecase
+" set smartcase
+set infercase
 set hlsearch
 set incsearch
 set autoindent
@@ -36,19 +39,19 @@ set smartindent
 set expandtab
 set wildmenu
 set nrformats=
+" set mouse=a
 set history=100
 set tabstop=4
 set showtabline=2
 set softtabstop=4
 set shiftwidth=4
 set cmdheight=2
-set updatetime=300
-set shortmess+=c
-set path+=/home/charlie/**
-set signcolumn=yes
 set selection=exclusive
 set selectmode=mouse,key
 set foldmethod=marker
+set updatetime=300
+set shortmess+=c
+set path+=/home/charlie/**
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -85,8 +88,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 " bracket autocomplete and autodelete
 Plug 'jiangmiao/auto-pairs'
-" tag explorer and viewer
-Plug 'liuchengxu/vista.vim'
 
 call plug#end()
 
@@ -96,10 +97,11 @@ call plug#end()
 
 " plugin 'YouCompleteMe' session begins:
 
-nnoremap <c-[> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <c-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 set completeopt=longest,menu
 set completeopt-=preview
+set signcolumn=yes
 
 " let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 " let g:ycm_key_invoke_completion='<M-;>'
@@ -107,13 +109,13 @@ set completeopt-=preview
 " let g:ycm_key_list_previous_completion=['<c-p>','<Up>']
 " let g:ycm_key_list_select_completion=['<c-n>','<Down>']
 let g:syntastic_ignore_files=[".*\.py$"] 
-let g:ycm_collect_identifiers_from_tag_files=1
+let g:ycm_complete_in_comments=1
+let g:ycm_complete_in_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
+let g:ycm_collect_identifiers_from_tag_files=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
-let g:ycm_complete_in_comments=1
-let g:ycm_complete_in_strings=1
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_error_symbol='>>'
 let g:ycm_warning_symbol='>*'
@@ -136,7 +138,7 @@ colorscheme solarized
 
 " autocmd vimenter * NERDTree
 
-map <F3> :NERDTreeToggle<CR>
+noremap <F3> :NERDTreeToggle<CR>
 
 " let NERDTreeShowLineNumbers=1
 " let NERDTreeAutoCenter=1
