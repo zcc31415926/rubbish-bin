@@ -2,6 +2,7 @@ syntax on
 
 let mapleader=","
 
+"nnoremap o o<Esc>
 nnoremap W $
 nnoremap $ Q
 nnoremap Q q
@@ -9,6 +10,10 @@ nnoremap q viwc
 nnoremap B ^
 nnoremap ^ B
 noremap \ ,
+noremap <C-h> :%s/
+inoremap <C-Space> <CR>
+inoremap ? \
+inoremap \ ?
 
 filetype on
 filetype indent on
@@ -16,7 +21,7 @@ filetype plugin on
 filetype plugin indent on
 
 set nocompatible
-set spell
+"set spell
 set hidden
 set nocp
 set nu
@@ -30,16 +35,16 @@ set showcmd
 set ruler
 set showmatch
 set ignorecase
-" set smartcase
+"set smartcase
 set infercase
-set hlsearch
+"set hlsearch
 set incsearch
 set autoindent
 set smartindent
 set expandtab
 set wildmenu
 set nrformats=
-" set mouse=a
+"set mouse=a
 set history=100
 set tabstop=4
 set showtabline=2
@@ -51,7 +56,9 @@ set selectmode=mouse,key
 set foldmethod=marker
 set updatetime=300
 set shortmess+=c
-set path+=/home/charlie/**
+set path+=/home/charlie/Documents/*
+set path+=/home/charlie/Desktop/*
+"set path+=/home/charlie/*
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -69,6 +76,8 @@ call plug#begin('~/.vim/additional_plugins')
 
 " solarized theme
 Plug 'altercation/vim-colors-solarized'
+" molokai theme
+Plug 'tomasr/molokai'
 " code autocomplete
 Plug 'ycm-core/YouCompleteMe'
 " file exploration tree
@@ -88,6 +97,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 " bracket autocomplete and autodelete
 Plug 'jiangmiao/auto-pairs'
+" tag explorer
+Plug 'majutsushi/tagbar'
+" markdown instant preview
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+" latex extension
+Plug 'lervag/vimtex'
+" latex instant preview
+Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
 
 call plug#end()
 
@@ -103,11 +120,11 @@ set completeopt=longest,menu
 set completeopt-=preview
 set signcolumn=yes
 
-" let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-" let g:ycm_key_invoke_completion='<M-;>'
-" let g:ycm_use_ultisnips_completer=0
-" let g:ycm_key_list_previous_completion=['<c-p>','<Up>']
-" let g:ycm_key_list_select_completion=['<c-n>','<Down>']
+"let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_key_invoke_completion='<M-;>'
+"let g:ycm_use_ultisnips_completer=0
+"let g:ycm_key_list_previous_completion=['<c-p>','<Up>']
+"let g:ycm_key_list_select_completion=['<c-n>','<Down>']
 let g:syntastic_ignore_files=[".*\.py$"] 
 let g:ycm_complete_in_comments=1
 let g:ycm_complete_in_strings=1
@@ -124,13 +141,24 @@ let g:ycm_warning_symbol='>*'
 
 """"""""""""""""""""""""""""""""""""""""
 
-" plugin 'vim-colors-solarized' begins:
+" plugin 'vim-colors-solarized' session begins:
 
-set background=dark
+"set background=dark
 
-colorscheme solarized
+"colorscheme solarized
 
-" plugin 'vim-colors-solarized' ends.
+" plugin 'vim-colors-solarized' session ends.
+
+""""""""""""""""""""""""""""""""""""""""
+
+" plugin 'molokai' session begins:
+
+let g:molokai_original=1
+
+"colorscheme molokai
+colorscheme desert
+
+" plugin 'molokai' session ends.
 
 """"""""""""""""""""""""""""""""""""""""
 
@@ -140,8 +168,8 @@ colorscheme solarized
 
 noremap <F3> :NERDTreeToggle<CR>
 
-" let NERDTreeShowLineNumbers=1
-" let NERDTreeAutoCenter=1
+"let NERDTreeShowLineNumbers=1
+"let NERDTreeAutoCenter=1
 let NERDTreeWinSize=30
 let NERDTreeShowBookmarks=1
 let NERDTreeHighlightCursorline=1
@@ -155,9 +183,9 @@ let NERDTreeIgnore=['\.pyc$','\.pyo$','\.py\$class$','\.obj$','\.o$','\.so$','\.
 
 " plugin 'ultisnips' session begins:
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " plugin 'ultisnips' session ends.
@@ -166,7 +194,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " plugin 'nerdcommenter' session begins:
 
-let g:NERDSpaceDelims=1
+let g:NERDSpaceDelims=0
 
 " plugin 'nerdcommenter' session ends.
 
@@ -193,8 +221,64 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-" set pastetoggle=<F2>
+"set pastetoggle=<F2>
 
 " plugin 'auto-pairs' session ends.
+
+""""""""""""""""""""""""""""""""""""""""
+
+" plugin 'tagbar' session begins:
+
+nnoremap <F8> :TagbarToggle<CR>
+
+" plugin 'tagbar' session ends.
+
+""""""""""""""""""""""""""""""""""""""""
+
+" plugin 'vim-instant-markdown' session begins:
+
+let g:instant_markdown_slow=1
+"let g:instant_markdown_autostart=0
+"let g:instant_markdown_open_to_the_world=1
+let g:instant_markdown_allow_unsafe_content=1
+"let g:instant_markdown_allow_external_content=0
+"let g:instant_markdown_mathjax=1
+"let g:instant_markdown_logfile='/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll=0
+let g:instant_markdown_port=8888
+"let g:instant_markdown_python=1
+"let g:instant_markdown_browzer="firefox --new-window"
+
+" plugin 'vim-instant-markdown' session ends.
+
+""""""""""""""""""""""""""""""""""""""""
+
+" plugin 'vimtex' session begins:
+
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+"set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" plugin 'vimtex' session ends.
+
+""""""""""""""""""""""""""""""""""""""""
+
+" plugin 'vim-latex-live-preview' session begins:
+
+let g:livepreview_previewer='zathura'
+autocmd Filetype tex setl updatetime=2
+nnoremap <F12> :LLPStartPreview<CR>
+
+" plugin 'vim-latex-live-preview' session ends.
+
+""""""""""""""""""""""""""""""""""""""""
+
+" plugin 'vim-polyglot' session begins:
+
+let g:polyglot_disabled = ['latex']
+
+" plugin 'vim-polyglot' session ends.
 
 """"""""""""""""""""""""""""""""""""""""
