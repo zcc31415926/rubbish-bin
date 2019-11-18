@@ -1,29 +1,32 @@
 from PIL import Image
-image=Image.open('/home/charlie/Pictures/Wallpapers/vim.png')
+
+
+img_path = '/home/charlie/Pictures/ubuntu.jpeg'
+image = Image.open(img_path)
 
 # display the input image
-# image.show()
-# image.convert('L').show()
+image.show()
+image.convert('L').show()
 
 # convert the input image to the JPG format
 # the saving process will fail without the color_format conversion
-# image2=image.convert('RGB').save("vim.jpg")
+# image2 = image.convert('RGB').save("ubuntu2.jpg")
 
 # create a thumbnail
-# image.thumbnail((128,128))
-# image.show()
+image.thumbnail((128, 128))
+image.show()
 
 # cut a region out of the image
 # and combine with paste
-# box=(100,100,400,400)
-# region=image.crop(box)
-# region.show()
-# region=region.transpose(Image.ROTATE_180)
-# image.paste(region,box)
-# image.show()
+box = (100, 100, 400, 400)
+region = image.crop(box)
+region.show()
+region = region.transpose(Image.ROTATE_180)
+image.paste(region, box)
+image.show()
 
 # adjust size and angle
-# image.resize((1024,1024)).show()
-# image.rotate(45).show()
+image.resize((512, 256)).show()
+image.rotate(45).show()
 
 image.close()
