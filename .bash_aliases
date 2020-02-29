@@ -46,11 +46,12 @@ alias ctx='python /home/charlie/.compile_tex_file.py'
 alias p2e='python /home/charlie/.pdf_to_eps.py'
 alias v='vim'
 alias p='python'
+alias o='octave --no-gui'
 alias t='touch'
 alias img='sudo fbi'
+alias ss='/home/charlie/Shadowsocks-Qt5-3.0.1-x86_64.AppImage'
 
 alias nwr='sudo service network-manager restart'
-alias fuckgfw='ssh charlie@138.91.8.146 -D localhost:1080 -Nf'
 
 alias spt='expect /home/charlie/.connect_to_ParisTech_server.sh'
 alias sptd='expect /home/charlie/.download_from_ParisTech_server.sh'
