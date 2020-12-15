@@ -31,7 +31,7 @@ color = ['#000000', '#00FF00', '#FF0000', '#000000', '#00FF00', '#FF0000']
 linestyle = ['-', '-', '-', '--', '--', '--']
 label = ['conv1', 'actv1', 'pool1', 'conv2', 'actv2', 'pool2']
 
-axes=plt.gca()
+axes = plt.gca()
 
 # axes visibility and cross position
 # axes.spines['top'].set_visible(False)
