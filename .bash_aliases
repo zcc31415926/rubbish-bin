@@ -49,11 +49,13 @@ alias p='python'
 alias o='octave --no-gui'
 alias t='touch'
 alias img='sudo fbi'
-alias ss='/home/charlie/Shadowsocks-Qt5-3.0.1-x86_64.AppImage'
 
 alias nwr='sudo service network-manager restart'
 
 alias spt='expect /home/charlie/.connect_to_ParisTech_server.sh'
 alias sptd='expect /home/charlie/.download_from_ParisTech_server.sh'
 alias sptu='expect /home/charlie/.upload_to_ParisTech_server.sh'
+alias sls='expect /home/charlie/.connect_to_426_server.sh'
+alias slsd='expect /home/charlie/.download_from_426_server.sh'
+alias slsu='expect /home/charlie/.upload_to_426_server.sh'
 
