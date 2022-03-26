@@ -30,5 +30,5 @@ if __name__ == '__main__':
     centers = k_means(data, num_centers)
     plt.scatter(data[:, 0], data[:, 1], c=target)
     plt.scatter(centers[:, 0], centers[:, 1], c='r')
-    plt.savefig('result.png')
+    plt.savefig('k_means_result.png')
 
