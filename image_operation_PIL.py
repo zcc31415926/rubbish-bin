@@ -1,16 +1,17 @@
 from PIL import Image
 
 
-img_path = '/home/charlie/Pictures/ubuntu.jpeg'
+img_path = './Pictures/ubuntu.jpeg'
 image = Image.open(img_path)
 
 # display the input image
 image.show()
+image.convert('RGB').show()
 image.convert('L').show()
 
 # convert the input image to the JPG format
 # the saving process will fail without the color_format conversion
-# image2 = image.convert('RGB').save("ubuntu2.jpg")
+# image2 = image.convert('RGB').save('ubuntu2.jpg')
 
 # create a thumbnail
 image.thumbnail((128, 128))
@@ -30,3 +31,4 @@ image.resize((512, 256)).show()
 image.rotate(45).show()
 
 image.close()
+

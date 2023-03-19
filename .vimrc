@@ -2,10 +2,18 @@ syntax on
 
 let mapleader=","
 
-"nnoremap o o<Esc>
+nnoremap j gjzz
+nnoremap k gkzz
+nnoremap n nzz
+nnoremap U <C-r>
+nnoremap < <<
+nnoremap > >>
+inoremap jj <esc>
+nnoremap t :w<CR>
+nnoremap m :tabe<Space>
 nnoremap W $
 nnoremap $ Q
-nnoremap Q q
+nnoremap Q :q<CR>
 nnoremap q viwc
 nnoremap B ^
 nnoremap ^ B
@@ -56,9 +64,6 @@ set selectmode=mouse,key
 set foldmethod=marker
 set updatetime=300
 set shortmess+=c
-set path+=/home/charlie/Documents/*
-set path+=/home/charlie/Desktop/*
-"set path+=/home/charlie/*
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete

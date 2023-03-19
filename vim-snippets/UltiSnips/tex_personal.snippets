@@ -1,0 +1,116 @@
+snippet doc "Plain LaTeX document" b
+\documentclass{article}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+\title{}
+\author{}
+\date{}
+\maketitle
+
+\end{document}
+endsnippet
+
+snippet split "Equation[Split]" b
+\begin{equation}
+\begin{split}
+\end{split}
+\label{eq}
+\end{equation}
+endsnippet
+
+snippet gather "Equation[Gather]" b
+\begin{gather}
+\label{eq}
+\end{gather}
+endsnippet
+
+snippet fig "Figure" b
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=\linewidth]{}
+\end{center}
+\caption{}
+\label{fig:}
+\end{figure}
+endsnippet
+
+snippet subfig "Subfigures[Subfloat]" b
+\begin{figure}[tb]
+\begin{center}
+\subfloat[]{
+\includegraphics[width=0.45\linewidth]{}
+}
+\subfloat[]{
+\includegraphics[width=0.45\linewidth]{}
+}
+\end{center}
+\caption{}
+\label{fig:}
+\end{figure}
+endsnippet
+
+snippet tab "Table" b
+\begin{table}[tb]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline\hline
+\hline
+\hline\hline
+\end{tabular}
+\end{center}
+\caption{}
+\label{tab:}
+\end{table}
+endsnippet
+
+snippet paper "Plain paper" b
+\documentclass{article}
+\usepackage{subfig}
+\usepackage[super]{nth}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+
+\begin{document}
+\title{}
+\author[]{XXX}
+\author[]{XXX \thanks{Corresponding author: mail}}
+\date{}
+\maketitle
+
+\end{document}
+endsnippet
+
+snippet paperchn "Plain Chinese paper" b
+\documentclass[UTF8]{ctexart}
+\usepackage{subfig}
+\usepackage[super]{nth}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+
+\begin{document}
+\title{}
+\author[]{XXX}
+\author[]{XXX \thanks{通讯作者。邮箱：邮箱}}
+\date{}
+\maketitle
+
+\end{document}
+endsnippet
+
+snippet frame "Beamer frame" b
+\begin{frame}{}
+\end{frame}
+endsnippet
+
+snippet bf "Bold font"
+\textbf{}
+endsnippet
+
