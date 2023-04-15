@@ -1,5 +1,4 @@
 import os
-import sys
 
 
 add = input('Run "git add -A"? Remember to run "git pull" first! y/N: ')
