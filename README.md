@@ -1,2 +1,2 @@
-# rubbish_bin
-haha
+# Rubbish Bin for Scattered Files
+HaHa
