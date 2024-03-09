@@ -86,7 +86,8 @@ set encoding=utf8
 set nocompatible
 " allowing background unsaved buffer
 set hidden
-" relative line number display
+" relative line number display with the current line number absolute
+set number
 set relativenumber
 " file auto-reloading on external changes with checking interval 1000ms
 set autoread
