@@ -2,14 +2,19 @@ export STORAGE=$HOME
 export MAIN_ENV=dl
 export WORK_DIR=$HOME/Projects
 
-# export PYTHONPATH=$PYTHONPATH:$HOME/miniconda3/envs/dl/lib
+# export PYTHONPATH=$PYTHONPATH:$HOME/miniconda3/envs/$MAIN_ENV/lib
 export PYTHONPATH=$STORAGE/MyPyModules:$PYTHONPATH
 export PYTHONSTARTUP=$HOME/Scripts/startup.py
-export QT_DEBUG_PLUGINS=1
 
 export PIP_CACHE_DIR=$STORAGE/.cache
 export HF_HOME=$STORAGE/.cache
 export TORCH_HOME=$STORAGE/.cache
+export WANDB_CACHE_DIR=$STORAGE/.cache/wandb
+export WANDB_CONFIG_DIR=$STORAGE/.config/wandb
+
+export QT_DEBUG_PLUGINS=1
+export NCCL_DEBUG=INFO
+export NCCL_P2P_LEVEL=NVL
 
 conda activate $MAIN_ENV
 cat $HOME/work.txt
