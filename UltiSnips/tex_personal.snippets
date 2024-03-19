@@ -14,17 +14,23 @@ snippet doc "Plain LaTeX document" b
 \end{document}
 endsnippet
 
-snippet split "Equation[Split]" b
+snippet split "Equation[Split] (multi-line with one number)" b
 \begin{equation}
 \begin{split}
 \end{split}
-\label{eq}
+\label{eq:}
 \end{equation}
+endsnippet
+
+snippet align "Equation[Align] (multi-line with individual numbers)" b
+\begin{align}
+\label{eq:}
+\end{align}
 endsnippet
 
 snippet gather "Equation[Gather]" b
 \begin{gather}
-\label{eq}
+\label{eq:}
 \end{gather}
 endsnippet
 
@@ -67,6 +73,15 @@ snippet tab "Table" b
 \end{table}
 endsnippet
 
+snippet frame "Beamer frame" b
+\begin{frame}
+\end{frame}
+endsnippet
+
+snippet bf "Bold font"
+\textbf{}
+endsnippet
+
 snippet paper "Plain paper" b
 \documentclass{article}
 \usepackage{subfig}
@@ -98,19 +113,40 @@ snippet paperchn "Plain Chinese paper" b
 \begin{document}
 \title{}
 \author[]{XXX}
-\author[]{XXX \thanks{通讯作者。邮箱：邮箱}}
+\author[]{XXX \thanks{通讯作者。邮箱：XXX}}
 \date{}
 \maketitle
 
 \end{document}
 endsnippet
 
-snippet frame "Beamer frame" b
-\begin{frame}{}
-\end{frame}
-endsnippet
+snippet hw "homework template" b
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
 
-snippet bf "Bold font"
-\textbf{}
-endsnippet
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\geometry{a4paper,scale=0.8}
 
+\begin{document}
+
+\title{Homework Set X Solutions}
+\author{XXX 1111111111}
+\date{}
+\maketitle
+
+\section*{Problem 1}
+
+\section*{Problem 2}
+
+\subsection*{(a)}
+
+\subsection*{(b)}
+
+\end{document}
+endsnippet

@@ -46,6 +46,8 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/YankRing.vim'
 " undo visualizer
 Plug 'mbbill/undotree'
+" auto code aligner
+Plug 'junegunn/vim-easy-align'
 " plugin command repetition recorder with `.`
 Plug 'tpope/vim-repeat'
 ">>>>>>>>>> file explorer <<<<<<<<<<
@@ -186,6 +188,8 @@ inoremap <C-Space> <Esc>la
 " visual-line cursor moving & centering
 nnoremap j gjzz
 nnoremap k gkzz
+" in-line character searching and jump-to
+nnoremap <Space> f
 " file opening in a new tabpage
 nnoremap m :tabe<Space>
 " file saving
@@ -202,8 +206,6 @@ nnoremap < <<
 nnoremap > >>
 " redo
 nnoremap U <C-r>
-" block folding
-nnoremap <Space> za
 " prefix for switching between panels
 nnoremap <C-a> <C-w>
 " occurrence replacing
@@ -213,18 +215,6 @@ nnoremap <C-a> <C-w>
 " a (replace all), q / <Esc> (quit) / l (replace and quit)
 " <C-e> (scroll up) / <C-y> (scroll down)
 nnoremap <C-h> :%s/
-
-" ------------------
-" built-in omnifuncs
-" ------------------
-" python auto-completion done by youcompleteme
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType java set omnifunc=javacomplete#Complet
 
 " -------
 " molokai
@@ -268,6 +258,9 @@ nnoremap <Leader>d :Limelight!! 0.7<CR>
 " -----------
 " multi-color brackets enabled
 let g:rainbow_active=1
+" customized color scheme
+let g:rainbow_guifgs=['RoyalBlue3','DarkOrange3','DarkOrchid3','FireBrick']
+let g:rainbow_ctermfgs=['lightblue','red','lightgreen','yellow','magenta']
 
 " ----------
 " indentLine
@@ -371,7 +364,7 @@ nnoremap `q :VBGkill<Space>
 " vim-easymotion
 " --------------
 " bi-directional fast jump-to
-nnoremap f <Plug>(easymotion-s)
+nnoremap f <Plug>(easymotion-bd-f)
 
 " -------------
 " nerdcommenter
@@ -424,6 +417,12 @@ nnoremap <Leader>p :YRShow<CR>
 " --------
 " panel toggle
 nnoremap <Leader>u :UndotreeToggle<CR>
+
+" --------------
+" vim-easy-align
+" --------------
+" alignment trigger
+nnoremap <Leader>a <Plug>(EasyAlign)ip
 
 " -------
 " LeaderF
@@ -479,4 +478,19 @@ let g:instant_markdown_port=8888
 let g:livepreview_previewer='gv'
 " re-rendering trigger
 nnoremap <F12> :LLPStartPreview<CR>
+
+" -----------------------------------
+" auto commands (executed at startup)
+" -----------------------------------
+" auto-completion done by vim-integrated omnifunc
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType java set omnifunc=javacomplete#Complet
+" python auto-completion done by youcompleteme
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+" ALE deactivated at startup
+autocmd VimEnter * ALEToggle
 
