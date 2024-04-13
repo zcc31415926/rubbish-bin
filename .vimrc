@@ -172,7 +172,8 @@ let g:tex_flavor='latex'
 " g: greek letters
 " m: math symbols
 " s: superscripts & subscripts
-let g:tex_conceal='abdgms'
+"let g:tex_conceal='abdgms'
+let g:tex_conceal=''
 
 " ----------------
 " built-in keymaps
@@ -389,7 +390,7 @@ let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 function! XTermPasteBegin()
-    set pastetoggle=<Esc>201~
+    set pastetoggle=<Esc>[201~
     set paste
     return ''
 endfunction
@@ -422,7 +423,8 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 " vim-easy-align
 " --------------
 " alignment trigger
-nnoremap <Leader>a <Plug>(EasyAlign)ip
+vnoremap <Leader>a <Plug>(EasyAlign)
+xnoremap <Leader>a <Plug>(EasyAlign)
 
 " -------
 " LeaderF
